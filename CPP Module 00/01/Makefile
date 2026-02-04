@@ -1,11 +1,11 @@
 # :>
 
-NAME = !!!!!!!NAME!!!!!!!
+NAME = phonebook
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = !!!!!!!FILE.cpp!!!!!!!
+SRC = main.cpp PhoneBook.cpp Contact.cpp
 
 OBJ = $(SRC:%.cpp=obj/%.o)
 

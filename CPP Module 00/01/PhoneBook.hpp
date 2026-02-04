@@ -1,6 +1,24 @@
+#ifndef PHONEBOOK_H
+#define PHONEBOOK_H
+
+#include "Contact.hpp"
+#include <iomanip>
+#include <cstdlib>
+
+class PhoneBook
+{
+    private:
+        Contact         _contacts[8];
+        size_t          _index;
+        int             _count;
 
 
-#include <array>
-class PhoneBook {
-    std::array<typename contacts, size_t 8>;
+    public:
+                        PhoneBook();
+        void            add();
+        void            search();
+        void            help();
+
 };
+
+#endif
