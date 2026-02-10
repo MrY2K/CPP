@@ -1,11 +1,11 @@
 # :>
 
-NAME = 
+NAME = a.out
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = #! NO .HPP FILES HERE 
+SRC = Fixed.cpp main.cpp #! NO .HPP FILES HERE 
 
 OBJ = $(SRC:%.cpp=obj/%.o)
 
