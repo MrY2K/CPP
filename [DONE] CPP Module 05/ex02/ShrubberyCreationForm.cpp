@@ -1,0 +1,56 @@
+#include "ShrubberyCreationForm.hpp"
+#include "Bureaucrat.hpp"
+#include <fstream>
+
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137), _target("default") 
+{
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target) 
+{
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : AForm(other), _target(other._target) 
+{
+}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other) 
+{
+    if (this != &other) 
+        this->_target = other._target;
+    return *this;
+}
+
+ShrubberyCreationForm::~ShrubberyCreationForm() 
+{
+}
+
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const 
+{
+    if (!this->getSigned())
+        throw AForm::NotSignedException(); // Make sure you added this exception to AForm!
+
+    if (executor.getGrade() > this->getGradToExecute())
+        throw AForm::GradeTooLowException();
+
+    std::ofstream file((this->_target + "_shrubbery").c_str());
+    if (file.is_open()) 
+    {
+        file << "            @ " << std::endl;
+        file << "      @ @ @  @ @ @ " << std::endl;
+        file << "    @  @\\/@ @ /__@ " << std::endl;
+        file << "    @@@ @\\ / @/  @ @ " << std::endl;
+        file << "   @\\  \\/@| @ | @ " << std::endl;
+        file << "  @__\\@ \\ |/ \\| / @ " << std::endl;
+        file << "     __\\|@|  ||/__/@ " << std::endl;
+        file << "    /  \\ \\  / /__ " << std::endl;
+        file << "   @    \\  \\/ /   @ " << std::endl;
+        file << "         |\" '| " << std::endl;
+        file << "         |\"  | " << std::endl;
+        file << "         |\"  | " << std::endl;
+        file << "        ~|\"  |~ " << std::endl;
+        file << "    ~~~~achoukri~~~~ " << std::endl;
+        file << "  ~~               ~~~ " << std::endl;
+        file.close();
+    }
+}
