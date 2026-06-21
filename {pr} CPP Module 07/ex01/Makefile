@@ -6,8 +6,8 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = ScalarConverter.cpp main.cpp
-HPP = ScalarConverter.hpp
+SRC = main.cpp
+HPP = iter.hpp
 
 OBJ = $(SRC:%.cpp=obj/%.o)
 
