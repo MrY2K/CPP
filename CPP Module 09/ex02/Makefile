@@ -1,13 +1,13 @@
 # :>
 
-NAME = span
+NAME = PmergeMe
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp
-HPP = MutantStack.hpp
+SRC = main.cpp PmergeMe.cpp
+HPP = PmergeMe.hpp
 
 OBJ = $(SRC:%.cpp=obj/%.o)
 
